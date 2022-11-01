@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+
+  </title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: rgb(241, 241, 248);
+      font-family: 'Crimson Pro', serif;
+      text-align: left;
+    }
+
+    a {
+      color: #00B7FF;
+      text-decoration: none;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .title {
+      text-align: center;
+      padding: 20px 10px 10px 10px;
+    }
+
+    .copyright {
+      margin: 1%;
+      text-align: center;
+      color: rgb(122, 137, 150);
+    }
+
+    .a:hover {
+      background-color: rgba(0, 255, 255, 0.575);
+      color: #00B7FF;
+    }
+  </style>
+</head>
+
+<body style="background-color: grey;">
+  <h1 style="background-color: black; color:white; margin-left:3%; margin-top:2%">
+    Fitlab
+  </h1>
+  <form action="/users/login" method="post" style="padding: 20px; width: 30%; margin-left:15%; margin-top:10%">
+    <h1>
+      <%= title %>
+    </h1> <br>
+    <input style="height: 40px; width: 80%; border-radius: 10%; font-size: 20px;" type="email"
+      name="email" id="" placeholder="email       Example:abc@gmail.com" required> <br> <br>
+    <input style="height: 40px; width: 80%; border-radius: 10%; font-size: 20px;" type="password"
+      name="password" id="" placeholder="**************" required> <br> <br><br>
+    <hr> <br>
+
+    <button style="height: 40px; width: 80%; border-radius: 10%; font-size: 20px; font-weight: bold;"
+      type="submit">Login</button>
+    <% if(typeof message !=undefined) {%>
+      <p>
+        <%= "" %>
+      </p>
+      <% } else {%>
+        <p>
+          <%= message %>
+        </p>
+        <% }%>
+  </form>
+
+
+</body>
+
+</html>

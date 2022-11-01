@@ -1,0 +1,47 @@
+<html>
+
+<head>
+
+</head>
+
+<body style="background-color: grey;">
+  <h1 style="background-color: black; color:white; margin-left:3%; margin-top:2%">
+    <%= title %>
+  </h1>
+  <!-- <div style="float: left; border: 2px dotted solid; box-shadow: 5px 10px 10px black; height: 100%; width: 20%; margin-left : 2%; padding: 20px;">
+    
+  </div> -->
+
+  <% for (var i=0; i< data.length;i++) {%>
+
+    <!-- <% if(data[i]=='Vidhi'){ %> -->
+
+      <aside
+        style="float: left; border: 2px dotted solid; box-shadow: 5px 10px 10px black; height: 100%; width: 20%; margin-left : 2%; padding: 20px;">
+        <h1><%=data[i] %></h1>
+        <a href=""> Contact Us</a><br> <br>
+        <a href=""> Subscribers</a><br> <br>
+
+      </aside>
+
+      <!-- <% } else{ %> -->
+        <div style="border:1px solid black; margin: 40px 20% 10px 40%; padding: 5px;">
+        <p>
+          Name : <%=data[i].title %>
+        </p>
+        <p>
+          Email : <%=data[i].author %>
+        </p>
+        <p>
+          Subject : <%=data[i].image %>
+        </p>
+        <p>
+          Your Message : <%=data[i].content %>
+        </p>
+        <!-- <% } %> -->
+
+          </div>
+          <%}%>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: rgb(241, 241, 248);
+      font-family:'Crimson Pro', serif;
+      text-align: left;
+    }
+    a {
+      color: #00B7FF;
+      text-decoration: none;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    .title{
+      text-align: center;
+      padding: 20px 10px 10px 10px;
+    }
+    .copyright{
+      margin: 1%;
+      text-align: center;
+      color: rgb(122, 137, 150);
+    }
+  </style>
+</head>
+<body>
+    <div class="parent">
+        <!--Message Block-->
+        <div class = 'message_body'>
+            <p class='block'>
+              Congratulations, 
+              <br/><br/>
+              Your account has been created.
+              <br/><br/>
+              Please use the following credentials for login
+              <br/>
+                  Email :<%= email %>.
+                  <br>
+                  Password :"<%= password %>".
+              <br/><br/>
+                 Thanks<br/>
+              <b>Myapp Team</b>
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <p class="copyright">&copy;Myapp <%= year %>. All Rights Reserved.</p>
+    </div>
+</body>
+
+</html>
