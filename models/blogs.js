@@ -10,6 +10,7 @@ const blogSchema = mongoose.Schema({
     is_deleted : {
         type : Boolean,
         default : false
+        
     }
 });
 
