@@ -22,16 +22,15 @@ const addblog = async (req, res) => {
                 errors: result
             });
         }
-        console.log("================", image)
+        // console.log("================", image)
         let ext = file_ext(image);   // Function is called, return value will end up in x
-        console.log(ext)
-
+        // console.log(ext)
         let d_date = new Date()
         let add = { title, image, date: d_date, author, category, content }
         const data = await blog.create(add)
 
         dir_path = "blog_imgs";
-        file_name_with_extention = "file1." + ext;
+        file_name_with_extention = `file1${Date.now()}.`+ ext;
         image_type = "image/" + ext;
         base64Upload(dir_path, file_name_with_extention, image_type, image, async (BlogImage) => {
             await blogModel.findByIdAndUpdate(data._id, { image: BlogImage })
@@ -59,7 +58,16 @@ const addblog = async (req, res) => {
 const editblog = async (req, res) => {
     try {
         const { id, title, image, date, author, category, content } = req.body
-        let updateBlog = { title, image, date, author, category, content };
+        if(!image.includes('https://fitlabimgs.s3.ap-south-1.amazonaws.com')){
+            let ext = file_ext(image);   
+            dir_path = "blog_imgs";
+            file_name_with_extention = `file1${Date.now()}.`+ ext;
+            image_type = "image/" + ext;
+            base64Upload(dir_path, file_name_with_extention, image_type, image, async (BlogImage) => {
+                await blogModel.findByIdAndUpdate(id, { image: BlogImage })
+            });
+        }
+        let updateBlog = { title, date, author, category, content };
 
         await blog.updateOne({ _id: mongoose.Types.ObjectId(id) }, updateBlog)
             .then((data) => {

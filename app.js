@@ -12,6 +12,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var blogRouter = require('./routes/blogs');
 var contactRouter = require('./routes/contactus');
+var fitlabImagesRouter = require('./routes/fitlabImages');
 var subscribeEmailRouter = require('./routes/subscribeEmail')
 
 
@@ -46,6 +47,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/blog',blogRouter);
 app.use('/contactus',contactRouter);
+app.use('/fitlabImages',fitlabImagesRouter);
 app.use('/subscribeEmail',subscribeEmailRouter);
 
 // catch 404 and forward to error handler

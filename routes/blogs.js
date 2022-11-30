@@ -16,7 +16,7 @@ router.post("/addblog",[
 router.post("/editblog",[
     check("id","please enter id").notEmpty(),
     check("title","please enter title").notEmpty(),
-    check("image","please set proper image").notEmpty(),
+    // check("image","please set proper image").notEmpty(),
     check("author","please enter author name").notEmpty(),
     // check("category","please enter category").notEmpty(),
     check("content","please enter contents").notEmpty()
