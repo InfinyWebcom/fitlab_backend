@@ -14,6 +14,8 @@ var blogRouter = require('./routes/blogs');
 var contactRouter = require('./routes/contactus');
 var fitlabImagesRouter = require('./routes/fitlabImages');
 var subscribeEmailRouter = require('./routes/subscribeEmail')
+var inquiryEmails = require('./routes/inquiryEmails')
+
 
 
 var app = express();
@@ -49,6 +51,8 @@ app.use('/blog',blogRouter);
 app.use('/contactus',contactRouter);
 app.use('/fitlabImages',fitlabImagesRouter);
 app.use('/subscribeEmail',subscribeEmailRouter);
+app.use('/inquiryEmails',inquiryEmails);
+
 
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
