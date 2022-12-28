@@ -4,9 +4,11 @@ const inquiryEmailsSchema = mongoose.Schema({
   email:  {
     unique: true,
     type: String,
-    lowercase: true,
     required: 'Email address is required',
   },
+  ip_add:{
+    type: String,
+  }
 //   subject:String,
 //   your_message:String
 }
