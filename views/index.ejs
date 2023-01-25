@@ -1,78 +1,8 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>
-    <%= title %>
-  </title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: rgb(241, 241, 248);
-      font-family: 'Crimson Pro', serif;
-      text-align: left;
-    }
-
-    a {
-      color: #00B7FF;
-      text-decoration: none;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    .title {
-      text-align: center;
-      padding: 20px 10px 10px 10px;
-    }
-
-    .copyright {
-      margin: 1%;
-      text-align: center;
-      color: rgb(122, 137, 150);
-    }
-
-    .a:hover {
-      background-color: rgba(0, 255, 255, 0.575);
-      color: #00B7FF;
-    }
-  </style>
-</head>
-
-<body style="background-color: rgba(128, 128, 128, 0.747);">
-
-  <h1 style="background-color: rgba(0, 0, 0, 0.507); color: black; margin-left:3%; margin-top:2%; padding: 10px;">
-    Fitlab
-    <div style="float: right;">
-      <a style="font-size: 50%; text-decoration: none; text-align: right; color: black;" href="/login">Login</a>
-    </div>
-    
-  </h1>
-  <div>
-    <% for (var i=0; i< data.length;i++) {%>
-
-      <!-- <% if(data[i]=='Vidhi'){ %> -->
-      <!-- <% } else{ %> -->
-      <div style="border:1px solid rgba(0, 0, 0, 0.527); margin: 40px 20% 10px 15%; padding: 5px;">
-        <p>
-          image : <%=data[i].image %>
-        </p>
-        <p>
-          title : <%=data[i].title %>
-        </p>
-        <p>
-          author : <%=data[i].author %>
-        </p>
-        <p>
-          content : <%=data[i].content %>
-        </p>
-        <!-- <% } %> -->
-
-      </div>
-      <%}%>
-  </div>
+<body>
+  Fitlab Api Running
 </body>
+
 
 </html>

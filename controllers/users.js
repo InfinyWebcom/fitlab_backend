@@ -90,43 +90,94 @@ const editaccount = async (req, res) => {
     });
 };
 
+// const login = async (req, res) => {
+//     try {
+//         const { email, password } = req.body;
+
+//         if (!email || !password) {
+//             res.status(200).json({
+//                 title: "Email and Password is required.",
+//                 error: true
+//             })
+//             // res.render('login', { message: message })
+//         }else{
+
+//             let blogger = await userModel.findOne({ email: email.trim().toLowerCase() });
+//             let pass = await bcrypt.compare(req.body.password, blogger.password);
+//             console.log("DddddddddddddddddddDDDDDD",pass)
+//             if (!pass || !blogger) {
+//                 res.status(200).json({
+//                     title: "Email or password is incorrect.",
+//                     error: true
+//                 })
+//             }else{
+//                 const accesstoken = jwt.sign({_id:mongoose.Types.ObjectId(blogger._id), email: blogger.email }, process.env.JwtSecret)
+//                 res.status(200).json({
+//                     title: "Logged in succeessfully.",
+//                     error: false,
+//                     token: accesstoken
+//                 })
+        
+//             }
+
+//         }
+
+      
+       
+//     } catch (error) {
+//         res.status(200).json({
+//             title: error.message || "Something went wrong.",
+//             error: true
+//         })
+//     }
+// }
+
 const login = async (req, res) => {
     try {
-        const { email, password } = req.body;
-
-        if (!email || !password) {
-            message = "Email and Password is required."
-            res.render('login', { message: message })
-        }
-
-        let blogger = await userModel.findOne({ email: email.trim().toLowerCase() });
-        if (!blogger) {
-            res.status(200).json({
-                title: "User not found.",
-                error: true,
-            })
-        }
-        let pass = await bcrypt.compare(req.body.password, blogger.password);
-        if (!pass) {
-            res.status(200).json({
-                title: "Email or password is incorrect.",
-                error: true
-            })
-        }
-        const accesstoken = jwt.sign({_id:mongoose.Types.ObjectId(blogger._id), email: blogger.email }, process.env.JwtSecret)
-        res.status(200).json({
-            title: "Logged in succeessfully.",
-            error: false,
-            token: accesstoken
-        })
-
-    } catch (error) {
-        res.status(200).json({
-            title: error.message || "Something went wrong.",
-            error: true
-        })
+      const { email, password } = req.body;
+  
+      console.log("body",req.body)
+      if (!email || !password) {
+          return res.status(200).json({
+          title: 'Email and password is required',
+          error: true
+      });
+      }
+      
+      let admin = await userModel.findOne({ email });
+      if (!admin) {
+        return res.status(200).json({
+          title: 'User not found',
+          error: true
+      });
+      }
+      let pass = await bcrypt.compare(req.body.password, admin.password);
+      if (!pass) {
+        return res.status(200).json({
+          title: 'Email or password is incorrect.',
+          error: true
+      });
+      }
+      const accessToken = jwt.sign(
+        { _id: admin._id,  email: admin.email },
+        process.env.JwtSecret
+      );
+  
+     
+      return res.status(200).json({
+        title: 'Logged in successfully ',
+        error: false,
+        token : accessToken
+  
+     });
+    } catch (err) {
+      return res.status(500).json({
+        title: 'Something went wrong',
+        error: true,
+  
+     });
     }
-}
+  };
 
 const forgotPassword = async (req, res) => {
     try {

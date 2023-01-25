@@ -24,11 +24,11 @@ router.post("/editblog",[
     blog.editblog(req,res)
 });
 
-router.get('/blogDetails',(req,res) => {
+router.get('/blogDetails',[auth.authenticateUser],(req,res) => {
     blog.blogDetails(req,res)
 })
 
-router.get("/listBlog",(req,res)=>{
+router.get("/listBlog",[auth.authenticateUser],(req,res)=>{
     blog.listBlog(req,res)
 });
 
@@ -36,7 +36,7 @@ router.post("/removeBlog",[auth.authenticateUser],(req,res)=>{
     blog.removeBlog(req,res)
 });
 
-router.get('/blogList',(req,res) => {
+router.get('/blogList',[auth.authenticateUser],(req,res) => {
     blog.blog_list(req,res)
   })
   

@@ -18,9 +18,16 @@ const create_contact_user = async (req, res) => {
       return res.status(200).json({
         error: true,
         title: result.errors[0].msg,
-        error: result,
       })
     }
+    const emailExist = await contactModel.findOne({ email: email });
+    if (emailExist) {
+      res.status(200).json({
+        error: true,
+        title: "Email already exist",
+      })
+    }
+    else{
     let add = { name,email,subject,your_message }
     const data = await contactModel.create(add)
     res.status(200).json({
@@ -29,6 +36,7 @@ const create_contact_user = async (req, res) => {
       data
     })
   }
+}
   catch (error) {
     return res.status(200).json({
       title: error.message || "Something went wrong",

@@ -28,7 +28,8 @@ const create_Enquiry = async (req, res) => {
         error: true,
         title: "Email already exist"
       })
-    }else{
+    }
+    else{
       let add = { email ,ip_add:clientIP }
       const data = await inquiryEmails.create(add)
       res.status(200).json({
@@ -52,4 +53,5 @@ const create_Enquiry = async (req, res) => {
 
 
 module.exports = {
-    create_Enquiry}
+    create_Enquiry
+  }

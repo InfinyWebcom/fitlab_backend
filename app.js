@@ -50,7 +50,7 @@ app.use('/users', usersRouter);
 app.use('/blog',blogRouter);
 app.use('/contactus',contactRouter);
 app.use('/fitlabImages',fitlabImagesRouter);
-app.use('/subscribeEmail',subscribeEmailRouter);
+// app.use('/subscribeEmail',subscribeEmailRouter);
 app.use('/inquiryEmails',inquiryEmails);
 
 
