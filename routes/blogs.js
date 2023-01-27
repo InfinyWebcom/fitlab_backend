@@ -36,7 +36,7 @@ router.post("/removeBlog",[auth.authenticateUser],(req,res)=>{
     blog.removeBlog(req,res)
 });
 
-router.get('/blogList',[auth.authenticateUser],(req,res) => {
+router.get('/blogList',(req,res) => {
     blog.blog_list(req,res)
   })
   
