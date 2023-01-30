@@ -36,7 +36,7 @@ const addInstagramToken = async (req, res) => {
                 // client_secret: "39975e5676dac99d96119d2adc05fbe5",
                 client_secret:"72a79c71a0df0ba22401527a5215711b",
                 grant_type: 'authorization_code',
-                redirect_uri: "https://www.thefitlabhoboken.com/"
+                redirect_uri: "https://www.thefitlabhoboken.com/instaConnection"
             };
             await makePost(postData,res)
         }
