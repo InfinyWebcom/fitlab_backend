@@ -11,6 +11,7 @@ var session= require('express-session')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var blogRouter = require('./routes/blogs');
+var instgramTokenRout = require('./routes/instagramToken');
 var contactRouter = require('./routes/contactus');
 var fitlabImagesRouter = require('./routes/fitlabImages');
 var subscribeEmailRouter = require('./routes/subscribeEmail')
@@ -48,6 +49,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/blog',blogRouter);
+app.use('/instagramToken',instgramTokenRout);
 app.use('/contactus',contactRouter);
 app.use('/fitlabImages',fitlabImagesRouter);
 // app.use('/subscribeEmail',subscribeEmailRouter);
