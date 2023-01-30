@@ -32,7 +32,7 @@ const addInstagramToken = async (req, res) => {
             console.log("ddddddddhdhbdhsjkbdi", code)
             const postData = {
                 code: code,
-                client_id: 924478315594743,
+                client_id: 515496257115643,
                 // client_secret: "39975e5676dac99d96119d2adc05fbe5",
                 client_secret:"72a79c71a0df0ba22401527a5215711b",
                 grant_type: 'authorization_code',
