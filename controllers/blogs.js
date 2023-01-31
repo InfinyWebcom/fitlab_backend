@@ -157,7 +157,7 @@ const blog_list = async (req, res) => {
         const list = await blogModel.find().sort(sort).then((data) => {
             res.status(200).json({
                 title: "Data fetch.",
-                error: "true",
+                error: false,
                 data,
             });
         })

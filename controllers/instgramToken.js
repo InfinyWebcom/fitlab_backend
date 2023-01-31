@@ -32,9 +32,9 @@ const addInstagramToken = async (req, res) => {
             console.log("ddddddddhdhbdhsjkbdi", code)
             const postData = {
                 code: code,
-                client_id: 515496257115643,
+                client_id: 922201675458862,
                 // client_secret: "39975e5676dac99d96119d2adc05fbe5",
-                client_secret:"72a79c71a0df0ba22401527a5215711b",
+                client_secret:"251523c8f0043897085d534fc038a95d",
                 grant_type: 'authorization_code',
                 redirect_uri: "https://www.thefitlabhoboken.com/instaConnection/"
             };
@@ -72,10 +72,10 @@ const makePost =async (postData,res) => {
    
     axios.post('https://api.instagram.com/oauth/access_token', querystring.stringify(postData))
         .then(async(response) => {
-            let add = {token:response.data.access_token, api_secrete_key:515496257115643                ,user_id:response.data.user_id}
-            let tokenlist=await instagramToken.findOne({api_secrete_key:'515496257115643'}) 
+            let add = {token:response.data.access_token, api_secrete_key:922201675458862                ,user_id:response.data.user_id}
+            let tokenlist=await instagramToken.findOne({api_secrete_key:'922201675458862'}) 
             if(tokenlist){
-                await instagramToken.updateOne({api_secrete_key:"515496257115643"} ,add).then((data)=>{
+                await instagramToken.updateOne({api_secrete_key:"922201675458862"} ,add).then((data)=>{
                     res.status(200).json({
                         error: false,
                         title: "success fully store in Database",
