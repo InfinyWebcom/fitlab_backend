@@ -24,7 +24,7 @@ router.post("/editblog",[
     blog.editblog(req,res)
 });
 
-router.get('/blogDetails',[auth.authenticateUser],(req,res) => {
+router.get('/blogDetails',(req,res) => {
     blog.blogDetails(req,res)
 })
 
