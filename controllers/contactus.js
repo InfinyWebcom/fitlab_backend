@@ -29,6 +29,9 @@ const create_contact_user = async (req, res) => {
     }
     else{
     let add = { name,email,subject,your_message }
+    console.log("hdhdhdhhdddddddddddddddddddddhdhdhdhdh",add)
+
+    const otp = await helper.sendEmailstoClient(add);
     const data = await contactModel.create(add)
     res.status(200).json({
       title:"Your request sent successfully",
